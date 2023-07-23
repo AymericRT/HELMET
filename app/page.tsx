@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-
+interface RadialProgressStyle {
+  "--value": number;
+  "--size": string;
+  "--thickness": string;
+}
 export default function Home() {
+  const radialProgressStyle: RadialProgressStyle = {
+    "--value": 70,
+    "--size": "12rem",
+    "--thickness": "16px",
+  };
   return (
     <main className="bg-cyan-400 flex flex-col h-full">
       <div className="navbar bg-transparent text-white">
@@ -39,7 +48,7 @@ export default function Home() {
         <div className="w-[80%] flex flex-col max-h-[500px] min-h-[300px] backdrop-blur bg-white/50 text-center rounded-xl absolute drop-shadow-2xl p-10">
           <div
             className="radial-progress text-[#B6F7C1] mx-auto"
-            style={{ "--value": 70, "--size": "12rem", "--thickness": "16px" }}
+            style={radialProgressStyle as React.CSSProperties}
           >
             <h1 className="text-4xl font-bold text-[#577673]">1.5 km</h1>
             <h3 className="text-xs text-[#719995]">to next HLMT</h3>
