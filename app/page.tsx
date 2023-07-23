@@ -18,21 +18,29 @@ export default function Home() {
           <a className="btn btn-ghost normal-case text-xl">HLMT</a>
         </div>
         <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
+          <div className="dropdown dropdown-end bg-transparent">
+            <label
+              tabIndex={0}
+              className="btn m-1 bg-transparent border-transparent text-white"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>
-            </svg>
-          </button>
+              <h1 className="text-3xl">=</h1>
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <Link href="/gps">
+                  Redeem
+                </Link>
+              </li>
+              <li>
+              <Link href="/gps">
+                  Marketplace
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -42,7 +50,7 @@ export default function Home() {
           width={240}
           height={240}
           alt="RareSkills Logo"
-          className="mx-auto m-10 "
+          className="mx-auto m-10 drop-shadow-2xl"
         ></Image>
 
         <div className="w-[80%] flex flex-col max-h-[500px] min-h-[300px] backdrop-blur bg-white/50 text-center rounded-xl absolute drop-shadow-2xl p-10">
