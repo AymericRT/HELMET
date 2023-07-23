@@ -3,48 +3,69 @@ import Link from "next/link";
 
 export default function GPS() {
   return (
-    <main className="bg-neutral flex flex-col h-full">
-      <div className="navbar bg-black rounded-b-3xl">
-        <div className="navbar-start">
-          <a className="btn btn-ghost normal-case text-xl">HLMT</a>
+    <main className="bg-neutral h-full">
+      <div className="bg-black rounded-b-3xl absolute w-full">
+        <div className="justify-between flex flex-row text-white font-extrabold px-5">
+          <div className="pt-2">HLMT</div>
+          <div className="pt-2 text-2xl">GPS</div>
+          <div className="text-3xl">=</div>
         </div>
-        <div className="navbar-center">
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <div className="text-center">1.5km to next HMTL</div>
+        <div className="text-center">
+          <progress
+            className="progress progress-success w-56"
+            value="80"
+            max="100"
+          ></progress>
         </div>
-        <div className="navbar-end">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h7"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Homepage</a>
-              </li>
-              <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-            </ul>
+      </div>
+      <div className=" bg-base-100">
+        <div
+          className="rounded-b-3xl "
+          style={{
+            backgroundImage: 'url("/map.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            width: "100%",
+            height: "400px", // Set to your desired height
+            padding: "20px",
+            /* You can add other styles here as needed */
+          }}
+        ></div>
+      </div>
+      <div className="bg-base-100 text-white">
+        <div className="border-8 border-white  mx-2 rounded-xl mt-5 flex flex-row justify-between p-4 text-6xl font-bold">
+          <div>
+            12km
+            <h3 className="text-sm font-light ">Traveled</h3>
+          </div>
+          <div>
+            +1.0
+            <h3 className="text-sm font-light ">kg CO2 offset</h3>
           </div>
         </div>
+      </div>
+      <div className="bg-base-100 p-5 flex flex-row justify-evenly text-4xl text-white">
+        <div className="text-center">
+          6km/h
+          <h3 className="text-sm font-light ">Current Speed</h3>
+        </div>
+        <div className="text-center">
+          75
+          <h3 className="text-sm font-light ">AQI</h3>
+        </div>
+        <div className="text-center">
+          00:10
+          <h3 className="text-sm font-light ">Timer</h3>
+        </div>
+      </div>
+      <div className="bg-base-100 p-5 flex flex-row justify-evenly text-4xl text-white">
+        <Link href="/">
+          <button className="btn btn-error btn-lg text-white rounded-3xl px-10 font-extrabold text-2xl">
+            End Session
+          </button>
+        </Link>
       </div>
     </main>
   );
